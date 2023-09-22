@@ -1,0 +1,7 @@
+{
+  "environment": "production",
+  "Port": 8080,
+  "realpage": {
+    "baseUrl": "To Be Decided"
+  }
+}
