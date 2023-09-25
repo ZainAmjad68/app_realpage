@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Define CSS styles for the top section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .header-left {
+            margin-left: 2rem;
+            flex: 1;
+            font-size: larger;
+        }
+
+        .header-right img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 2rem;
+        }
+
+        .bigger {
+            font-size: x-large;
+            margin-top: -1rem;
+        }
+
+        /* Define CSS styles for the heading and table section */
+        .section-heading {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .table-heading {
+            text-align: center;
+            font-size: 20px;
+            margin: 1rem;
+        }
+
+        .table-container {
+            margin: 1.5rem;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .info-table th,
+        .info-table td {
+            border: 1px solid #d9d9d9;
+            padding: 0.7rem;
+            width: 33.33%;
+            text-align: center;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        /* Style the table header */
+        .info-table th {
+            background-color: #858585;
+            color: #fff;
+        }
+
+        .billing-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .billing-table th,
+        .billing-table td {
+            padding: 0.7rem;
+            text-align: center;
+            font-size: medium;
+        }
+
+        /* Style the table header */
+        .billing-table th {
+            background-color: #3c3b3b;
+            color: #fff;
+        }
+
+        .billing-table td {
+            border-bottom: 2px solid #333333;
+        }
+
+        .billing-table tfoot td {
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .amount-heading {
+            text-align: right;
+            font-size: 20px;
+            margin: 1rem;
+        }
+
+        .underline {
+            padding-right: 8rem;
+            position:relative;
+        }
+
+        .underline:after{
+            content: "";
+            position: absolute;
+            bottom: -3px;/*position the underline using left and bottom property*/
+            right: 7.5rem;
+            width: 250px;/* adjust the width of underline as you like*/
+            border-bottom: 1px solid #302f2f;/* adjust the underline width and color as you like*/
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <p>
+                Touchmark at Fairway Village<br>
+                2911 SE Village Loop<br>
+                Vancouver, WA 98683-8103<br>
+                (360) 254-2866<br>
+                <a href="http://touchmarkvancouver.com" target="_blank">http://touchmarkvancouver.com</a>
+                <br><br>
+                <b>06/08/2023</b>
+                <br><br>
+                <b>Bill To:</b>
+                <div class="bigger">John Doe</div>
+                Assistant Manager<br>
+                Vancouver, WA 98683-8104
+            </p>
+        </div>
+        <div class="header-right">
+            <img src="../public/assets/touchmark-logo.png" alt="Company Logo">
+        </div>
+    </div>
+    <!-- The rest of your billing statement content goes here -->
+    <div class="section-heading">
+        <b>Resident Billing Statement</b>
+    </div>
+    <div class="table-container">
+        <table class="info-table">
+            <tr>
+                <th>Resident</th>
+                <th>Home</th>
+                <th>Due Date</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>M154</td>
+                <td>Upon Receipt</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-heading">
+        <b>Detailed list of charges and payments for current month:</b>
+    </div>
+    <div class="table-container">
+        <table class="billing-table">
+            <tbody>
+                <tr>
+                    <th>Unit</th>
+                    <th>Transaction Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>M174</td>
+                    <td>5/21/2023</td>
+                    <td>Guest Room Fee</td>
+                    <td>$125</td>
+                </tr>
+                <tr>
+                    <td>M175</td>
+                    <td>5/25/2023</td>
+                    <td>IL Monthly Service Fee</td>
+                    <td>$5205</td>
+                </tr>
+                <tr>
+                    <td>M154</td>
+                    <td>5/25/2023</td>
+                    <td>PreAuthorized Payment</td>
+                    <td>-$12338</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: right;">Balance as of 06/08/2023</td>
+                    <td>($4,234.58)</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="amount-heading">
+        <b style="font-size: 22px;"><span style="margin-right: 15rem;">Total Amount Due: </span><span class="underline">($41,251)</span></b>
+    </div>
+</body>
+</html>
