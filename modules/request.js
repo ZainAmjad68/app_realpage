@@ -1,4 +1,5 @@
 const rp = require("request-promise");
+const config = require("../config");
 
 let options = {
   POST: { headers: true },
@@ -10,21 +11,22 @@ let options = {
   SIMPLEPOST: {},
 };
 
+
 async function sendRequest(params) {
   try {
     // options that are common for every request
     let httpOptions = {
       method: params.method,
       uri: params.url,
-      json: true,
     };
     let attributes = options[params.method];
     // append options that are different for each request type
     Object.assign(httpOptions, attributes);
     if (httpOptions["headers"] !== undefined) {
       httpOptions.headers = {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + params.accessToken,
+        "Content-Type": "text/xml; charset=utf-8",
+        apikey: config.get("realpage.apiKey"),
+        SOAPAction: params.SOAPaction
       };
     }
     if (params.data !== undefined) {
