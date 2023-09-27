@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "run dev": "nodemon server",
-    "release:automated": "claudia --config claudia-staging.json update",
+    "release:automated": "npx claudia create --handler lambda.handler --deploy-proxy-api --region us-east-1",
     "release:automated:production": "claudia --config claudia-production.json update"
   },
   "keywords": [],
